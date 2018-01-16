@@ -1,0 +1,35 @@
+{
+  "name": "ranchnet",
+  "version": "0.0.0",
+  "description": "NodeJS RESTful API for accessing cattle records.",
+  "main": "app.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "chai-http": "^3.0.0",
+    "chai": "^4.1.2",
+    "dotenv": "^4.0.0",
+    "eslint": "^4.13.1",
+    "express": "^4.16.1",
+    "mysql": "^2.15.0",
+    "restify": "^6.3.4"
+  },
+  "devDependencies": {
+    "eslint-config-google": "^0.9.1",
+    "mocha": "^4.0.1"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Everene/RanchNet-API.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Everene/RanchNet-API/issues"
+  },
+  "homepage": "https://github.com/Everene/RanchNet-API#readme"
+}
