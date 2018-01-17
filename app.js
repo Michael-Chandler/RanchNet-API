@@ -24,26 +24,26 @@ server.get('/', controllers.documentation.viewDocumentation);
 
 // Users Start
 server.post('/users', controllers.users.createUsers);
-server.put('/users/:id', controllers.users.updateUsers);
-server.del('/users/:id', controllers.users.deleteUsers);
+server.put('/users', controllers.users.updateUsers);
+server.del('/users', controllers.users.deleteUsers);
 server.get('/users', controllers.users.viewUsers);
 
 // Cattle Start
 server.post('/cattle', controllers.cattle.createCattle);
-server.put('/cattle/:id', controllers.cattle.updateCattle);
-server.del('/cattle/:id', controllers.cattle.deleteCattle);
+server.put('/cattle', controllers.cattle.updateCattle);
+server.del('/cattle', controllers.cattle.deleteCattle);
 server.get('/cattle', controllers.cattle.viewCattle);
 
 // Pastures Start
 server.post('/pastures', controllers.pastures.createPastures);
-server.put('/pastures/:id', controllers.pastures.updatePastures);
-server.del('/pastures/:id', controllers.pastures.deletePastures);
+server.put('/pastures', controllers.pastures.updatePastures);
+server.del('/pastures', controllers.pastures.deletePastures);
 server.get('/pastures', controllers.pastures.viewPastures);
 
 // Settings Start
 server.post('/settings', controllers.settings.createSettings);
-server.put('/settings/:id', controllers.settings.updateSettings);
-server.del('/settings/:id', controllers.settings.deleteSettings);
+server.put('/settings', controllers.settings.updateSettings);
+server.del('/settings', controllers.settings.deleteSettings);
 server.get('/settings', controllers.settings.viewSettings);
 
 // Start Server

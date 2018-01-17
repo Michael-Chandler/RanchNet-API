@@ -2,18 +2,23 @@ let config = require('../../config');
 var mysql = require('mysql');
 
 exports.createSettings = function(req, res, next) {
-    config.query(req, res, next, 'INSERT INTO Settings SET ?', req.body);
+    var sql = mysql.format("INSERT INTO Settings SET ?", req.body);
+    config.query(req, res, next, sql, req.query.token);
 };
 exports.updateSettings = function(req, res, next) {
-    config.query(req, res, next, 'UPDATE Settings SET ? WHERE settingsId = ?',
-        [req.body, [req.query.id]]);
+    var token = req.query.token;
+    delete req.query.token;
+    var sql = mysql.format("UPDATE Settings SET ? WHERE settingId = ?", [req.body, req.query.settingId]);
+    config.query(req, res, next, sql, token);
 };
 exports.deleteSettings = function(req, res, next) {
-    config.query(req, res, next, 'DELETE FROM Settings WHERE settingsId = ?',
-        [req.query.id]);
+    var sql = mysql.format("DELETE FROM Settings WHERE settingId = ?", [req.query.settingId]);
+    config.query(req, res, next, sql, req.query.token);
 };
 exports.viewSettings = function(req, res, next) {
+    var token = req.query.token;
+    delete req.query.token;
     var sql = mysql.format("SELECT * FROM Settings WHERE ?", req.query);
     sql = sql.replace(', ', ' AND ');
-    config.query(req, res, next, sql);
+    config.query(req, res, next, sql, token);
 };
