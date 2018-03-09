@@ -1,8 +1,8 @@
-var async = require('async');
-var chai = require('chai');
-var chaiHttp = require('chai-http');
-var should = require('chai').should();
-var server;
+let async = require('async');
+let chai = require('chai');
+let chaiHttp = require('chai-http');
+let should = require('chai').should();
+let server;
 
 chai.use(chaiHttp);
 
@@ -53,5 +53,4 @@ describe('Users', function() {
                 done();
             });
     });
-    
 });

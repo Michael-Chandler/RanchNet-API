@@ -46,6 +46,9 @@ server.put('/settings', controllers.settings.updateSettings);
 server.del('/settings', controllers.settings.deleteSettings);
 server.get('/settings', controllers.settings.viewSettings);
 
+// Reports Start
+server.get('/reports', controllers.reports.viewReports);
+
 // Start Server
 server.listen(process.env.PORT, (err) => {
     if (err) {
