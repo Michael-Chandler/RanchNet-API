@@ -6,7 +6,7 @@ exports.viewReports = function(req, res, next) {
     delete req.query.token;
     if (req.query.reportId === undefined) {
         let sql = mysql.format(
-            'SELECT reportId, reportName, reportDescription FROM Reports',
+            'SELECT reportId, reportName, reportDescription, reportUrl FROM Reports',
             req.query
         );
         config.query(req, res, next, sql, token);
