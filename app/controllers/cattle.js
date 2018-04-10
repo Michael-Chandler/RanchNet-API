@@ -20,7 +20,7 @@ exports.deleteCattle = function(req, res, next) {
 exports.viewCattle = function(req, res, next) {
     let token = req.query.token;
     delete req.query.token;
-    let sql = mysql.format('SELECT * FROM Cattle WHERE ?', req.query);
+    let sql = mysql.format('SELECT * FROM Cattle LEFT JOIN Pastures ON Cattle.pastureId = Pastures.pastureId WHERE ?', req.query);
     sql = sql.replace(', ', ' AND ');
     config.query(req, res, next, sql, token);
 };
