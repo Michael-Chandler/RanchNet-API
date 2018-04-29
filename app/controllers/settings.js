@@ -21,6 +21,6 @@ exports.viewSettings = function(req, res, next) {
     let token = req.query.token;
     delete req.query.token;
     let sql = mysql.format('SELECT * FROM Settings WHERE ?', req.query);
-    sql = sql.replace(', ', ' AND ');
+    sql = sql.replace(/,/g, ' AND');
     config.query(req, res, next, sql, token);
 };
