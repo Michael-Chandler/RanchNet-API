@@ -49,6 +49,9 @@ server.get('/settings', controllers.settings.viewSettings);
 // Reports Start
 server.get('/reports', controllers.reports.viewReports);
 
+// Pairing Start
+server.get('/pairing', controllers.pairing.viewPairing);
+
 // Start Server
 server.listen(process.env.PORT, (err) => {
     if (err) {
