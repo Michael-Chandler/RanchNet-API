@@ -77,7 +77,7 @@ module.exports = {
         .then(function(fulfilled) {
             executeTransaction(req, res, next, sql, token)
             .then(function(fulfilled) {
-                executeTransaction(req, res, next, fulfilled[0].reportSQL, token)
+                executeTransaction(req, res, next, fulfilled[0].reportSQL + ' AND \`userId\` = \'' + req.query.userId + '\'', token)
                 .then(function(fulfilled) {
                     res.json(fulfilled);
                 })

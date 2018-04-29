@@ -12,8 +12,8 @@ exports.viewReports = function(req, res, next) {
         config.query(req, res, next, sql, token);
     } else {
         let sql = mysql.format(
-            'SELECT reportSQL FROM Reports WHERE ?',
-            req.query
+            'SELECT reportSQL FROM Reports WHERE `reportId` = ?',
+            req.query.reportId
         );
         config.queryreport(req, res, next, sql, token);
     }
